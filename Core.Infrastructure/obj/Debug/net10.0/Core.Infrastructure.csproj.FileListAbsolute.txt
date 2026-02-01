@@ -1,0 +1,15 @@
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\bin\Debug\net10.0\Core.Infrastructure.deps.json
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\bin\Debug\net10.0\Core.Infrastructure.dll
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\bin\Debug\net10.0\Core.Infrastructure.pdb
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\bin\Debug\net10.0\Core.dll
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\bin\Debug\net10.0\Core.pdb
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.csproj.AssemblyReference.cache
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.AssemblyInfoInputs.cache
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.AssemblyInfo.cs
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Inf.F45230EC.Up2Date
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.dll
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\refint\Core.Infrastructure.dll
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.pdb
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\ref\Core.Infrastructure.dll
