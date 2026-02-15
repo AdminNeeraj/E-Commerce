@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Core.Entities;
 using Core.Infrastructure.Data;
+using Core.Interface;
 
 namespace API.Controllers
 {
@@ -11,11 +12,10 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-
-        private readonly StoreContext _context;
-        public ProductsController(StoreContext context)
+        private readonly IProductRepository _repository;
+        public ProductsController(IProductRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
 
@@ -23,17 +23,15 @@ namespace API.Controllers
         [HttpGet("GetProductsList")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-            // TODO: Implement database query
-           // return Ok(new List<Product>());
-              return Ok(await _context.Products.ToListAsync());
+              return Ok(await _repository.GetProductsAsync());
         }
 
         // GET: api/product/{id}
         [HttpGet("GetProductById/{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {  
-            // return Ok(new Product());
-            var product = await _context.Products.FindAsync(id);
+            //var product = await _context.Products.FindAsync(id);
+            var product = await _repository.GetProductByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -45,11 +43,10 @@ namespace API.Controllers
         [HttpPost("CreateProduct")]
         public async Task<ActionResult<Product>> CreateProduct([FromBody] Product product)
         {
-            // TODO: Implement product creation
-            //return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+            // _context.Products.Add(product);
+            // await _context.SaveChangesAsync();
+            var createdProduct = await _repository.CreateProductAsync(product);
+            return CreatedAtAction(nameof(GetProduct), new { id = createdProduct.Id }, createdProduct);
         }
 
         // PUT: api/product/{id}
@@ -62,8 +59,9 @@ namespace API.Controllers
             {
                 return BadRequest();
             }
-            _context.Entry(product).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            // _context.Entry(product).State = EntityState.Modified;
+            // await _context.SaveChangesAsync();
+            await _repository.UpdateProductAsync(product);
             return NoContent();
         }
 
@@ -71,18 +69,29 @@ namespace API.Controllers
         [HttpDelete("DeleteProductById/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            // TODO: Implement product deletion>>
-            //return NoContent();
-            var product = await _context.Products.FindAsync(id);
+            //var product = await _context.Products.FindAsync(id);
+            var product = await _repository.GetProductByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            // _context.Products.Remove(product);
+            // await _context.SaveChangesAsync();
+            await _repository.DeleteProductAsync(id);
             return NoContent();
         }
-       }
 
-    
+        [HttpGet("brands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        {
+            return Ok(await _repository.GetProductBrandsAsync());
+        }
+
+        [HttpGet("types")]
+        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
+        {
+            return Ok(await _repository.GetProductTypesAsync());
+        }
+
+    }      
 }
