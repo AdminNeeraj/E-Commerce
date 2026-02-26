@@ -24,6 +24,9 @@ builder.Services.AddDbContext<StoreContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
 var app = builder.Build();
 
@@ -37,6 +40,7 @@ if (app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection(); // when we use https redirection  
 
+app.UseStaticFiles(); // to serve static files like images, css, js from wwwroot folder
 app.UseAuthorization();
 
 app.MapControllers();

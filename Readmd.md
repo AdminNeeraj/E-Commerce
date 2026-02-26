@@ -84,3 +84,20 @@ Entity Framework.Designe
 Get-Process -Name API | Stop-Process
 # OR if your project name is different
 Get-Process -Name dotnet | Where-Object {$_.MainWindowTitle -like "*API*"} | Stop-Process
+
+
+# DROP DATABASE
+dotnet ef database drop -p Core.Infrastructure -s API
+# remove migration
+dotnet ef migrations remove `
+  -p .\Core.Infrastructure\Core.Infrastructure.csproj `
+  -s .\WebApi\WebApi.csproj
+
+# Run Project 
+  D:\Neeraj Project\E-Commerce\api>  dotnet watch --no-hot-reload
+ dotnet watch --no-hot-reload
+
+# lacture 27. 9
+
+
+

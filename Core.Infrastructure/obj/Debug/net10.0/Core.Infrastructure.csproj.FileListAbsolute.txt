@@ -8,6 +8,7 @@ D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastr
 D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.AssemblyInfoInputs.cache
 D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.AssemblyInfo.cs
 D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.sourcelink.json
 D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Inf.F45230EC.Up2Date
 D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\Core.Infrastructure.dll
 D:\Neeraj Project\E-Commerce\Core.Infrastructure\obj\Debug\net10.0\refint\Core.Infrastructure.dll
