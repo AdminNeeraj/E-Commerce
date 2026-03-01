@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OD4FeoZ61i4=",
+  "dgSpecHash": "WAr/tNoEkCA=",
   "success": true,
-  "projectFilePath": "D:\\Neeraj Project\\E-Commerce\\API\\API.csproj",
+  "projectFilePath": "D:\\Neeraj Project\\E-Commerce\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NeerajT30602\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\NeerajT30602\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

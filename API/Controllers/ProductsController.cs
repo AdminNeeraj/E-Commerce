@@ -8,12 +8,13 @@ using Core.Interface;
 using Core.Specifications;
 using API.Dtos;
 using AutoMapper;
+using API.Errors;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    // [ApiController]
+    // [Route("api/[controller]")]
+    public class ProductsController : BaseApiController
     {
 
         private readonly IGenericRepository<Product> _repository;
@@ -65,6 +66,8 @@ namespace API.Controllers
 
         // GET: api/product/{id}
         [HttpGet("GetProductById/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<PrductsToReturnDtos>> GetProduct(int id)
         {  
             //var product = await _context.Products.FindAsync(id);
@@ -77,10 +80,8 @@ namespace API.Controllers
             // return Ok(product);
             var spec = new ProductsWithTypeAndBrandsSpecification(id);
             var product = await _repository.GetEntityWithSpecAsync(spec);
-            if (product == null)
-            {
-                return NotFound();
-            }
+            if (product == null) return NotFound(new ApiResponse(404));
+           
             //return Ok(product);
 
             // using AutoMapper to map the product entity to the DTO object

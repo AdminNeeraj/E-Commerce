@@ -97,7 +97,7 @@ dotnet ef migrations remove `
   D:\Neeraj Project\E-Commerce\api>  dotnet watch --no-hot-reload
  dotnet watch --no-hot-reload
 
-# lacture 27. 9
+# lacture 28 Till
 
 
 
